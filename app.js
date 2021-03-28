@@ -2,6 +2,10 @@ const app = require("express")();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 io.on("connection", (socket) => {
   socket.on("untyping", (msg) => {
     console.log("yazmıyor", msg);
