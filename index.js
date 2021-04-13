@@ -22,6 +22,7 @@ io.on("connection", (socket) => {
   });
   socket.on("join_room", (msg) => {
     socket.join(msg["roomID"]);
+    console.log("odaya katıldı", msg);
   });
 
   socket.on("disconnect", (reason) => {
