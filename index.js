@@ -17,7 +17,7 @@ io.on("connection", (socket) => {
     console.log("yazıyor", msg);
     const roomID = msg["roomID"];
     const senderName = msg["senderName"];
-    io.to(roomID).emit("typing", msg);
+    io.broadcast.to(roomID).emit("typing", msg);
     console.log(io.sockets.adapter.rooms);
   });
   socket.on("join_room", (msg) => {
