@@ -20,9 +20,9 @@ io.on("connection", (socket) => {
     io.to(roomID).emit("typing", msg);
     console.log(io.sockets.adapter.rooms);
   });
-  socket.on("join_room", (msg) => {
-    socket.join(msg["roomID"]);
-  });
+  // socket.on("join_room", (msg) => {
+  //   socket.join(msg["roomID"]);
+  // });
 
   socket.on("disconnect", (reason) => {
     console.log("disconnect");
