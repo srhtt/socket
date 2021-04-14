@@ -26,7 +26,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", (reason) => {
-    console.log("disconnect", reason);
+    console.log("disconnect", socket.id);
     // socket.to(roomID).emit("disconnectFromEverything", msg);
   });
 });
