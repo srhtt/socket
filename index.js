@@ -11,7 +11,7 @@ io.on("connection", (socket) => {
     console.log("yazmıyor", msg);
     const roomID = msg["roomID"];
     const senderName = msg["senderName"];
-    io.to(roomID).emit("untyping", msg);
+    socket.to(roomID).emit("untyping", msg);
   });
   socket.on("typing", (msg) => {
     console.log("yazıyor", msg);
@@ -26,7 +26,8 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", (reason) => {
-    console.log("disconnect");
+    console.log("disconnect", reason);
+    // socket.to(roomID).emit("disconnectFromEverything", msg);
   });
 });
 
