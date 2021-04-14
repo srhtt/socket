@@ -31,7 +31,7 @@ io.on("connection", (socket) => {
   socket.on("disconnect", (reason) => {
     console.log("disconnect", socket.id);
     msg = { socketID: socket.id };
-    socket.to(roomID).emit("untyping", msg);
+    // socket.to(roomID).emit("untyping", msg);
   });
 });
 
